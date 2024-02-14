@@ -1,5 +1,5 @@
-using Newtonsoft.Json.Converters;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 
 namespace Toxiproxy.Net
@@ -12,7 +12,7 @@ namespace Toxiproxy.Net
     {
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            if(value is Enum)
+            if (value is Enum)
             {
                 writer.WriteValue(value.ToString().ToLowerInvariant());
             }

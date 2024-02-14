@@ -6,12 +6,12 @@ using Xunit;
 
 namespace ToxiproxyNetCore.Tests
 {
-    public class ConnectionFixture: IAsyncLifetime
+    public class ConnectionFixture : IAsyncLifetime
     {
         private readonly Process _process;
         private Connection _connection;
         public Client Client => _connection.Client();
-        
+
 
         public async Task InitializeAsync()
         {
@@ -34,7 +34,7 @@ namespace ToxiproxyNetCore.Tests
         }
 
         public async Task DisposeAsync() => await Task.Run(Dispose);
-        
+
 
         public void DisposeConnection() => _connection?.Dispose();
 

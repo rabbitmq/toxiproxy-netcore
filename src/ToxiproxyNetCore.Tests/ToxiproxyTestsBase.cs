@@ -13,7 +13,7 @@ namespace ToxiproxyNetCore.Tests
         }
 
         public async Task InitializeAsync() => await Fixture.ResetConnection();
-        
+
 
         public async Task DisposeAsync() => await Task.Run(Fixture.DisposeConnection);
     }

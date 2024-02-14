@@ -10,17 +10,17 @@ namespace Toxiproxy.Net
         {
         }
 
-        public ToxiProxiException(string message) : 
+        public ToxiProxiException(string message) :
             base(message)
         {
         }
 
-        public ToxiProxiException(string message, Exception inner) : 
+        public ToxiProxiException(string message, Exception inner) :
             base(message, inner)
         {
         }
 
-        protected ToxiProxiException(SerializationInfo info, StreamingContext context) : 
+        protected ToxiProxiException(SerializationInfo info, StreamingContext context) :
             base(info, context)
         {
         }
