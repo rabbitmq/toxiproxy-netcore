@@ -5,7 +5,7 @@
     <Version Condition=" '$(APPVEYOR_BUILD_VERSION)' != '' ">$(APPVEYOR_BUILD_VERSION)</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>Toxiproxy.Net</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Authors>adospace</Authors>
     <Description>Toxiproxy .net standard client.</Description>
@@ -14,8 +14,9 @@
     <PackageProjectUrl>https://github.com/adospace/toxiproxy-netcore</PackageProjectUrl>
     <RepositoryUrl>https://github.com/adospace/toxiproxy-netcore</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../../../rabbit.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
