@@ -12,7 +12,7 @@ namespace Toxiproxy.Net
 
         private readonly IHttpClientFactory _clientFactory;
         private readonly bool _resetAllToxicsAndProxiesOnClose;
-        
+
         public Connection(bool resetAllToxicsAndProxiesOnClose = false)
             : this("127.0.0.1", resetAllToxicsAndProxiesOnClose)
         {

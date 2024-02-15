@@ -108,7 +108,7 @@ namespace ToxiproxyNetCore.Tests
 
             // Retrieve the proxy
             var proxyCopy = await client.FindProxyAsync(TestProxy.One.Name);
-            
+
             // The proxy should be enabled
             Assert.True(proxyCopy.Enabled);
         }

@@ -396,7 +396,7 @@ namespace ToxiproxyNetCore.Tests
             toxic = await proxy.AddAsync(toxic);
 
             // Reload the toxic and update the properties
-            var toxicInProxy = (SlicerToxic) await proxy.GetToxicByNameAsync(toxic.Name);
+            var toxicInProxy = (SlicerToxic)await proxy.GetToxicByNameAsync(toxic.Name);
 
             // Update the toxic's property
             toxicInProxy.Name = "NewName";

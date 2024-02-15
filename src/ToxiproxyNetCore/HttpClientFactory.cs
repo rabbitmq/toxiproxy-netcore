@@ -17,7 +17,7 @@ namespace Toxiproxy.Net
 
         public Uri BaseUrl { get; }
 
-    public HttpClient Create()
+        public HttpClient Create()
         {
             var client = new HttpClient { BaseAddress = BaseUrl };
             client.DefaultRequestHeaders.TryAddWithoutValidation("Content-Type", "application/json");

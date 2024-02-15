@@ -9,7 +9,7 @@ namespace Toxiproxy.Net.Toxics
         /// </summary>
         public class ToxicAttributes
         {
-            [JsonProperty(PropertyName ="average_size")]
+            [JsonProperty(PropertyName = "average_size")]
             public int AverageSize { get; set; }
 
             [JsonProperty(PropertyName = "size_variation")]

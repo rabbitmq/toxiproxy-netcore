@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
-using Newtonsoft.Json;
-using System.Net;
-using Toxiproxy.Net.Toxics;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Toxiproxy.Net.Toxics;
 
 namespace Toxiproxy.Net
 {
@@ -242,12 +242,13 @@ namespace Toxiproxy.Net
             using (var client = _clientFactory.Create())
             {
                 var url = $"proxies/{proxy.Name}/toxics";
-				var objectSerialized = JsonConvert.SerializeObject( 
-						toxic, 
-						new JsonSerializerSettings {
-							NullValueHandling = NullValueHandling.Ignore
-						} 
-					);
+                var objectSerialized = JsonConvert.SerializeObject(
+                        toxic,
+                        new JsonSerializerSettings
+                        {
+                            NullValueHandling = NullValueHandling.Ignore
+                        }
+                    );
 
                 var response = await client.PostAsync(url, new StringContent(objectSerialized, Encoding.UTF8, "application/json"));
 
@@ -360,18 +361,18 @@ namespace Toxiproxy.Net
 
             switch (response.StatusCode)
             {
-                case HttpStatusCode.NotFound: 
+                case HttpStatusCode.NotFound:
                     throw new ToxiProxiException("Not found");
 
-                case HttpStatusCode.Conflict: 
+                case HttpStatusCode.Conflict:
                     throw new ToxiProxiException("duplicated entity");
 
-                default: 
+                default:
                     var errorContent = await response.Content.ReadAsStringAsync();
                     var error = JsonConvert.DeserializeObject<ToxiProxiErrorMessage>(errorContent);
                     throw new ToxiProxiException("An error occurred: " + error.title);
             }
-            
+
         }
     }
 }
