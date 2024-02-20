@@ -8,5 +8,6 @@
         public const string SlowCloseToxic = "slow_close";
         public const string TimeoutToxic = "timeout";
         public const string LimitDataToxic = "limit_data";
+        public const string ResetPeerToxic = "reset_peer";
     }
 }
